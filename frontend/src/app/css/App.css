@@ -1,0 +1,29 @@
+.App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .datos input{
+    width: 300px;
+    height: 30 px;
+    font-size: 20 px;
+    padding-left: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    color:black;
+  }
+  
+  .datos button {
+    width: 320px;
+    height: 50px;
+    margin-top: 5px;
+  }

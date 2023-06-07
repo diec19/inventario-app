@@ -1,28 +1,28 @@
+"use client"
 
 
-async function fetchCiudades(){
-   const res=await fetch("http://localhost:9000/api/ciudades")
-   const data = await res.json()
-   return data.data
-}
-async function indexPage(){
-  const user =await fetchCiudades()
+import { useTasks } from "../app/context/TasksContext" 
 
 
 
+const page = () => {
+  const {tasks} = useTasks()
+  console.log(tasks)
+  
   return (
-    <ul>
+    <div>
       
-      {
-        user.map((p)=>(
-          <li key={p.id}>
-            <h3 className="text-green-600 font-bold">{p.name}</h3>
-            
-          </li>
-        ))
-      }
-    </ul>
+
+        {
+        tasks.map(task=>(
+
+            <div key={task.id}>
+               <p>{task.nombre}</p>
+            </div>          
+          
+         ))
+        }
+    </div>
   )
 }
-
-export default indexPage
+export default page

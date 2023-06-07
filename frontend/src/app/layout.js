@@ -1,4 +1,5 @@
-import './app.css'
+import { TasksProvider } from '../app/context/TasksContext'
+import './globals.css'
 
 export const metadata = {
   title: 'Create Next App',
@@ -8,7 +9,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+      <TasksProvider>
+        {children}
+        </TasksProvider>  
+        
+        </body>
     </html>
   )
 }

@@ -1,8 +1,8 @@
 import db from "../config/db.js";
 
-export const getCountries=()=>{
+export const getEmpleados=()=>{
     return new Promise((resolve,reject)=>{
-        const query='SELECT * FROM ciudades';
+        const query='SELECT * FROM empleados';
         db.execute(query)
 
         .then((result)=>resolve(result))
@@ -12,9 +12,9 @@ export const getCountries=()=>{
     
 };
 
-export const getCountry=(id)=>{
+export const getempleado=(id)=>{
     return new Promise((resolve,reject)=>{
-        const query='SELECT * FROM ciudades WHERE id=?';
+        const query='SELECT * FROM empleados WHERE id=?';
         db.execute(query,[id])
 
         .then((result)=>resolve(result))
@@ -24,12 +24,12 @@ export const getCountry=(id)=>{
     
 };
 
-export const createCountry=(ciudades)=>{
+export const createEmpleados=(empleados)=>{
     return new Promise((resolve,reject)=>{
-        const query='INSERT INTO ciudades (name,capital,currency) VALUES (?,?,?) ';
+        const query='INSERT INTO empleados (nombre,edad,pais,cargo,anios) VALUES (?,?,?,?,?) ';
 
-        const {name,capital,currency}=ciudades
-        db.execute(query,[name,capital,currency])
+        const {nombre,edad,pais,cargo,anios}=empleados
+        db.execute(query,[nombre,edad,pais,cargo,anios])
 
         .then((result)=>resolve(result))
         .catch((err)=>reject(err))
@@ -38,13 +38,13 @@ export const createCountry=(ciudades)=>{
     
 };
 
-export const updateCountry=(id,ciudades)=>{
+export const updateEmpleados=(id,empleados)=>{
     return new Promise((resolve,reject)=>{
-        const query='UPDATE ciudades SET name=?, capital=?, currency=? WHERE id=?';
+        const query='UPDATE empleados SET nombre=?, edad=?, pais=?, cargo=?, anios=? WHERE id=?';
 
-        const {name,capital,currency}=ciudades
+        const {nombre,edad,pais,cargo,anios}=empleados
 
-        db.execute(query,[name,capital,currency,id])
+        db.execute(query,[nombre,edad,pais,cargo,anios,id])
 
         .then((result)=>resolve(result))
         .catch((err)=>reject(err))
@@ -53,9 +53,9 @@ export const updateCountry=(id,ciudades)=>{
     
 };
 
-export const deleteCountry=(id)=>{
+export const deleteEmpleados=(id)=>{
     return new Promise((resolve,reject)=>{
-        const query='DELETE FROM ciudades WHERE id=?';
+        const query='DELETE FROM empleados WHERE id=?';
 
         
 

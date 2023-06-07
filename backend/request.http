@@ -1,34 +1,39 @@
-GET http://localhost:3000/api/ciudades HTTP/1.1
+GET http://localhost:9000/api/empleados HTTP/1.1
 
 ###
 
 
 
-GET http://localhost:3000/api/ciudades/3 HTTP/1.1
+GET http://localhost:9000/api/empleados/2 HTTP/1.1
 
 ###
 
-POST http://localhost:3000/api/ciudades HTTP/1.1
+POST http://localhost:9000/api/empleados HTTP/1.1
 Content-Type: application/json
 
 {
-    "name":"Paraguay",
-    "capital":"Asuncion",
-    "currency":"Guaranies"
+    "nombre":"Marisol",
+    "edad": 31,
+    "pais": "Argentino",
+    "cargo": "Desarrollador",
+    "anios": 2022
 }
 
 ###
 
-PUT http://localhost:3000/api/ciudades/3 HTTP/1.1
+PUT http://localhost:9000/api/empleados/4 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name":"Mexico",
-    "capital":"Mex",
-    "currency":"pesos mexicano"
+    
+    "nombre":"Marisol",
+    "edad": 32,
+    "pais": "Posadeña",
+    "cargo": "Desarrollador",
+    "anios": 2023
 }
 
 
 ###
 
-DELETE http://localhost:3000/api/ciudades/3 HTTP/1.1
+DELETE http://localhost:9000/api/empleados/3 HTTP/1.1
